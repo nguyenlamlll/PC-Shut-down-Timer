@@ -36,6 +36,10 @@
             this.button_Start = new System.Windows.Forms.Button();
             this.label_Status = new System.Windows.Forms.Label();
             this.label_Timer = new System.Windows.Forms.Label();
+            this.comboBox_Seconds = new System.Windows.Forms.ComboBox();
+            this.label_Seconds = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +89,7 @@
             // button_Start
             // 
             this.button_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_Start.Location = new System.Drawing.Point(332, 73);
+            this.button_Start.Location = new System.Drawing.Point(257, 139);
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(75, 29);
             this.button_Start.TabIndex = 2;
@@ -97,7 +101,7 @@
             // 
             this.label_Status.AutoSize = true;
             this.label_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_Status.Location = new System.Drawing.Point(28, 166);
+            this.label_Status.Location = new System.Drawing.Point(29, 199);
             this.label_Status.Name = "label_Status";
             this.label_Status.Size = new System.Drawing.Size(21, 20);
             this.label_Status.TabIndex = 3;
@@ -113,11 +117,173 @@
             this.label_Timer.TabIndex = 1;
             this.label_Timer.Text = "Set Timer:";
             // 
+            // comboBox_Seconds
+            // 
+            this.comboBox_Seconds.FormattingEnabled = true;
+            this.comboBox_Seconds.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.comboBox_Seconds.Location = new System.Drawing.Point(270, 77);
+            this.comboBox_Seconds.Name = "comboBox_Seconds";
+            this.comboBox_Seconds.Size = new System.Drawing.Size(62, 24);
+            this.comboBox_Seconds.TabIndex = 4;
+            // 
+            // label_Seconds
+            // 
+            this.label_Seconds.AutoSize = true;
+            this.label_Seconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_Seconds.Location = new System.Drawing.Point(338, 82);
+            this.label_Seconds.Name = "label_Seconds";
+            this.label_Seconds.Size = new System.Drawing.Size(45, 20);
+            this.label_Seconds.TabIndex = 5;
+            this.label_Seconds.Text = "secs";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.comboBox1.Location = new System.Drawing.Point(138, 78);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(62, 24);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(206, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "mins";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 289);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Seconds);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_Seconds);
             this.Controls.Add(this.label_Status);
             this.Controls.Add(this.button_Start);
             this.Controls.Add(this.label_Timer);
@@ -142,6 +308,10 @@
         private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.Label label_Status;
         private System.Windows.Forms.Label label_Timer;
+        private System.Windows.Forms.ComboBox comboBox_Seconds;
+        private System.Windows.Forms.Label label_Seconds;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -40,7 +40,8 @@ namespace ShutDown_Timer
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            ShutDownManager.ShutDown(TickEvents.CommandFlag, timer1);
+            int interval = Int32.Parse(comboBox_Seconds.SelectedItem.ToString());
+            ShutDownManager.ShutDown(TickEvents.CommandFlag, interval, timer1, label_Status);
         }
     }
 }
