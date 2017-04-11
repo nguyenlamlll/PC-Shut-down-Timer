@@ -46,7 +46,10 @@ namespace ShutDown_Timer
                 Timer timer = (Timer)obj;
                 timer.Stop();
                 timer.Tick -= new EventHandler(TimerOnTick);
-                MessageBox.Show("See You Later!");
+
+                //string msg = String.Format("See You Later!Click cancel if you don't want to {0}", FlagEnum.ForceShutDown.ToString());
+                DialogResult result = MessageBox.Show("See You Later! Press Cancel If You Want To Go Back", "Confirm", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.Cancel) return;
 
                 if (CommandFlag == FlagEnum.ForceShutDown) TickEventsManager.ShutDownWithCommand();
 
@@ -54,6 +57,12 @@ namespace ShutDown_Timer
 
             }
 
+        }
+
+        public static void StopTimer(Timer timer)
+        {
+            timer.Stop();
+            timer.Tick -= new EventHandler(TimerOnTick);
         }
     }
 }

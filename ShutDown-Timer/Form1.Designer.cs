@@ -40,6 +40,7 @@
             this.label_Seconds = new System.Windows.Forms.Label();
             this.comboBox_Minutes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_Cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +90,9 @@
             // button_Start
             // 
             this.button_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_Start.Location = new System.Drawing.Point(257, 139);
+            this.button_Start.Location = new System.Drawing.Point(270, 143);
             this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(75, 29);
+            this.button_Start.Size = new System.Drawing.Size(113, 29);
             this.button_Start.TabIndex = 2;
             this.button_Start.Text = "Start";
             this.button_Start.UseVisualStyleBackColor = true;
@@ -101,7 +102,7 @@
             // 
             this.label_Status.AutoSize = true;
             this.label_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_Status.Location = new System.Drawing.Point(23, 216);
+            this.label_Status.Location = new System.Drawing.Point(50, 204);
             this.label_Status.Name = "label_Status";
             this.label_Status.Size = new System.Drawing.Size(0, 25);
             this.label_Status.TabIndex = 3;
@@ -276,16 +277,28 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "mins";
             // 
+            // button_Cancel
+            // 
+            this.button_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button_Cancel.Location = new System.Drawing.Point(270, 178);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(113, 29);
+            this.button_Cancel.TabIndex = 2;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 289);
+            this.ClientSize = new System.Drawing.Size(458, 267);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Seconds);
             this.Controls.Add(this.comboBox_Minutes);
             this.Controls.Add(this.comboBox_Seconds);
             this.Controls.Add(this.label_Status);
+            this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Start);
             this.Controls.Add(this.label_Timer);
             this.Controls.Add(this.label_Help);
@@ -313,6 +326,7 @@
         private System.Windows.Forms.Label label_Seconds;
         private System.Windows.Forms.ComboBox comboBox_Minutes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_Cancel;
     }
 }
 

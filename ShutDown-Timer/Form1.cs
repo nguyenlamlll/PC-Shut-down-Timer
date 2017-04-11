@@ -37,7 +37,7 @@ namespace ShutDown_Timer
             {
                 pictureBox_ShutDown.BackColor = SystemColors.ControlDark;
                 pictureBox_Restart.BackColor = SystemColors.Control;
-            }       
+            }
         }
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
@@ -50,15 +50,26 @@ namespace ShutDown_Timer
                 pictureBox_Restart.BackColor = SystemColors.ControlDark;
                 pictureBox_ShutDown.BackColor = SystemColors.Control;
             }
-                
+
         }
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            var item = comboBox_Seconds.SelectedItem;
-            int interval = 0;
-            if (item != null) interval = Int32.Parse(item.ToString());
+            int interval = getTotalInterval(comboBox_Minutes, comboBox_Seconds);
             ShutDownManager.ShutDown(TickEvents.CommandFlag, interval, timer1, label_Status);
+        }
+
+        private int getTotalInterval(ComboBox min, ComboBox sec)
+        {
+            int result = 0;
+            if (sec.SelectedItem != null) result += Int32.Parse(sec.SelectedItem.ToString()); //Get total seconds
+            if (min.SelectedItem != null) result += Int32.Parse(min.SelectedItem.ToString()) * 60; //One minute = 60 seconds
+            return result;
+        }
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            ShutDownManager.StopTimer(timer1);
+            label_Status.Text = null;
         }
     }
 }
