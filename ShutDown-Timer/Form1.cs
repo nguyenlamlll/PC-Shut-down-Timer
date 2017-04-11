@@ -30,28 +30,17 @@ namespace ShutDown_Timer
 
         private void pictureBox_ShutDown_Click(object sender, EventArgs e)
         {
-            TickEvents.CommandFlag = 5;
+            TickEvents.CommandFlag = (int)FlagEnum.ForceShutDown;
         }
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
-
+            TickEvents.CommandFlag = (int)FlagEnum.ForceReboot;
         }
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            if (TickEvents.IsTimerOn)
-            {
-                if (TickEvents.CommandFlag == 5)
-                try
-                {
-                    timer1.Start();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            ShutDownManager.ShutDown(TickEvents.CommandFlag, timer1);
         }
     }
 }

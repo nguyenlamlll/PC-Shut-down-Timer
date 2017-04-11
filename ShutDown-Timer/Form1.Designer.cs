@@ -35,6 +35,7 @@
             this.label_Help = new System.Windows.Forms.Label();
             this.button_Start = new System.Windows.Forms.Button();
             this.label_Status = new System.Windows.Forms.Label();
+            this.label_Timer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.pictureBox_Restart.Size = new System.Drawing.Size(50, 50);
             this.pictureBox_Restart.TabIndex = 0;
             this.pictureBox_Restart.TabStop = false;
-            this.pictureBox_Restart.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_Restart.Click += new System.EventHandler(this.pictureBoxRestart_Click);
             // 
             // pictureBox_ShutDown
             // 
@@ -77,14 +78,14 @@
             this.label_Help.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label_Help.Location = new System.Drawing.Point(133, 25);
             this.label_Help.Name = "label_Help";
-            this.label_Help.Size = new System.Drawing.Size(196, 25);
+            this.label_Help.Size = new System.Drawing.Size(199, 25);
             this.label_Help.TabIndex = 1;
-            this.label_Help.Text = "Select desired Action";
+            this.label_Help.Text = "Select Desired Action";
             // 
             // button_Start
             // 
             this.button_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button_Start.Location = new System.Drawing.Point(254, 71);
+            this.button_Start.Location = new System.Drawing.Point(332, 73);
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(75, 29);
             this.button_Start.TabIndex = 2;
@@ -102,6 +103,16 @@
             this.label_Status.TabIndex = 3;
             this.label_Status.Text = "...";
             // 
+            // label_Timer
+            // 
+            this.label_Timer.AutoSize = true;
+            this.label_Timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_Timer.Location = new System.Drawing.Point(12, 77);
+            this.label_Timer.Name = "label_Timer";
+            this.label_Timer.Size = new System.Drawing.Size(103, 25);
+            this.label_Timer.TabIndex = 1;
+            this.label_Timer.Text = "Set Timer:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(458, 289);
             this.Controls.Add(this.label_Status);
             this.Controls.Add(this.button_Start);
+            this.Controls.Add(this.label_Timer);
             this.Controls.Add(this.label_Help);
             this.Controls.Add(this.pictureBox_Restart);
             this.Controls.Add(this.pictureBox_ShutDown);
@@ -129,6 +141,7 @@
         private System.Windows.Forms.Label label_Help;
         private System.Windows.Forms.Button button_Start;
         private System.Windows.Forms.Label label_Status;
+        private System.Windows.Forms.Label label_Timer;
     }
 }
 

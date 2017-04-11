@@ -61,7 +61,16 @@ namespace ShutDown_Timer.Models
         {
             System.Diagnostics.Process.Start("shutdown", "/s /t 0");
         }
-        
-      
+        /*
+         *  Switches:
+'   -l  Log off profile
+'   -s  Shut down computer
+'   -r  Restart computer
+'   -f  Force applications to close
+'   -t  Set a timeout for shutdown
+'   -m \\computer name (Shutdown remote computer)
+'   -i  Show the Shutdown GUI
+        */
+
     }
 }
