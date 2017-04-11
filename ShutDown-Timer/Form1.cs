@@ -15,6 +15,16 @@ namespace ShutDown_Timer
         public Form1()
         {
             InitializeComponent();
+
+            //Set interval for timer: 1 second
+            timer1.Interval = 1000;
+
+            //Make the form fixed and hide maximize, minimize boxes.
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
+
+        
     }
 }

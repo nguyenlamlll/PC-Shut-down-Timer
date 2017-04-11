@@ -29,11 +29,51 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.pictureBox_ShutDown = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox_ShutDown
+            // 
+            this.pictureBox_ShutDown.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_ShutDown.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox_ShutDown.Name = "pictureBox_ShutDown";
+            this.pictureBox_ShutDown.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_ShutDown.TabIndex = 0;
+            this.pictureBox_ShutDown.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(66, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(458, 289);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox_ShutDown);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox_ShutDown;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
