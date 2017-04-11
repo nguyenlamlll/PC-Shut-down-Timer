@@ -1,12 +1,17 @@
 ## PC Shut Down Timer
 --------------
-This is an example about how to use a timer to Shut Down or Reboot your computer.
-nbsp;
+This is an example of using a timer to Shut Down or Reboot your computer.
+
+
+
 
 ## Navigate Through Files
 --------------
-### User Interface
 
+ - **Form1.cs**:  The testing user interface. It mainly calls the functions from ShutDownManager.cs
+ - **ShutDownManager.cs**:  The "business" core of this example.
+ - **TickEvents.cs**: Defines methods of shutting down/ rebooting. For example:
 
-### Business Layer (or Logic)
+    System.Diagnostics.Process.Start("shutdown", "/s /t 0");
 
+--------------
