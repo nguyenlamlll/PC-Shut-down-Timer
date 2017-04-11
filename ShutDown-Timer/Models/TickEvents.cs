@@ -7,24 +7,33 @@ using System.Management;
 
 namespace ShutDown_Timer.Models
 {
-    class TickEvents
+    static class TickEvents
     {
         // Check whether timer is on or not
-        public bool IsTimerOn;
-
-        // Flag 1 means we want to shut down the system. Use "2" to reboot.
-        public int CommandFlag;
+        public static bool IsTimerOn { get; set; }
+        /* Flags:
+           - 0 (0x0) Log Off
+           - 4 (0x4) Forced Log Off (0 4)
+           - 1 (0x1) Shutdown
+           - 5 (0x5) Forced Shutdown (1 4)
+           - 2 (0x2) Reboot
+           - 6 (0x6) Forced Reboot (2 4)
+           - 8 (0x8) Power Off
+           - 12 (0xC) Forced Power Off (8 4)
+        */
+        public static int CommandFlag { get; set; }
     }
 
     /// <summary>
     /// Manage Events For Tick Event of the timer.
     /// </summary>
-    class TickEventsManager
+    static class TickEventsManager
     {
         /// <summary>
-        /// 
+        /// Shut down computer using WMI (Windows Management Instrumentation)
+        /// For more information, read here: https://en.wikipedia.org/wiki/Windows_Management_Instrumentation
         /// </summary>
-        void Shutdown()
+        static void Shutdown()
         {
             ManagementBaseObject mboShutdown = null;
             ManagementClass mcWin32 = new ManagementClass("Win32_OperatingSystem");
@@ -35,8 +44,8 @@ namespace ShutDown_Timer.Models
             ManagementBaseObject mboShutdownParams =
                      mcWin32.GetMethodParameters("Win32Shutdown");
 
-            // Flag 1 means we want to shut down the system.
-            mboShutdownParams["Flags"] = "1";
+            // Flag 5: Force Shut down
+            mboShutdownParams["Flags"] = "5";
             mboShutdownParams["Reserved"] = "0";
             foreach (ManagementObject manObj in mcWin32.GetInstances())
             {
@@ -45,9 +54,14 @@ namespace ShutDown_Timer.Models
             }
         }
 
-        void ShutDownWithCommand()
+        /// <summary>
+        /// Shut down by calling shutdown.exe (built-in application for Windows OS)
+        /// </summary>
+        static void ShutDownWithCommand()
         {
             System.Diagnostics.Process.Start("shutdown", "/s /t 0");
         }
-    } 
+        
+      
+    }
 }
