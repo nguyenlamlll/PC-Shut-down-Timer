@@ -21,7 +21,7 @@ namespace ShutDown_Timer.Models
            - 8 (0x8) Power Off
            - 12 (0xC) Forced Power Off (8 4)
         */
-        public static int CommandFlag { get; set; }
+        public static FlagEnum CommandFlag { get; set; }
     }
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace ShutDown_Timer.Models
         /// Shut down computer using WMI (Windows Management Instrumentation)
         /// For more information, read here: https://en.wikipedia.org/wiki/Windows_Management_Instrumentation
         /// </summary>
-        static void Shutdown()
+        public static void Shutdown()
         {
             ManagementBaseObject mboShutdown = null;
             ManagementClass mcWin32 = new ManagementClass("Win32_OperatingSystem");
@@ -57,7 +57,7 @@ namespace ShutDown_Timer.Models
         /// <summary>
         /// Shut down by calling shutdown.exe (built-in application for Windows OS)
         /// </summary>
-        static void ShutDownWithCommand()
+        public static void ShutDownWithCommand()
         {
             System.Diagnostics.Process.Start("shutdown", "/s /t 0");
         }
@@ -71,6 +71,9 @@ namespace ShutDown_Timer.Models
 '   -m \\computer name (Shutdown remote computer)
 '   -i  Show the Shutdown GUI
         */
-
+        public static void RebootWithCommand()
+        {
+            System.Diagnostics.Process.Start("shutdown", "/r /t 0");
+        }
     }
 }

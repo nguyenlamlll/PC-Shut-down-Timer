@@ -30,17 +30,34 @@ namespace ShutDown_Timer
 
         private void pictureBox_ShutDown_Click(object sender, EventArgs e)
         {
-            TickEvents.CommandFlag = (int)FlagEnum.ForceShutDown;
+            TickEvents.CommandFlag = FlagEnum.ForceShutDown;
+            comboBox_Minutes.Enabled = true;
+            comboBox_Seconds.Enabled = true;
+            if (pictureBox_ShutDown.BackColor != SystemColors.ControlDark)
+            {
+                pictureBox_ShutDown.BackColor = SystemColors.ControlDark;
+                pictureBox_Restart.BackColor = SystemColors.Control;
+            }       
         }
 
         private void pictureBoxRestart_Click(object sender, EventArgs e)
         {
-            TickEvents.CommandFlag = (int)FlagEnum.ForceReboot;
+            TickEvents.CommandFlag = FlagEnum.ForceReboot;
+            comboBox_Minutes.Enabled = true;
+            comboBox_Seconds.Enabled = true;
+            if (pictureBox_Restart.BackColor != SystemColors.ControlDark)
+            {
+                pictureBox_Restart.BackColor = SystemColors.ControlDark;
+                pictureBox_ShutDown.BackColor = SystemColors.Control;
+            }
+                
         }
 
         private void button_Start_Click(object sender, EventArgs e)
         {
-            int interval = Int32.Parse(comboBox_Seconds.SelectedItem.ToString());
+            var item = comboBox_Seconds.SelectedItem;
+            int interval = 0;
+            if (item != null) interval = Int32.Parse(item.ToString());
             ShutDownManager.ShutDown(TickEvents.CommandFlag, interval, timer1, label_Status);
         }
     }

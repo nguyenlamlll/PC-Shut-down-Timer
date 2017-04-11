@@ -38,7 +38,7 @@
             this.label_Timer = new System.Windows.Forms.Label();
             this.comboBox_Seconds = new System.Windows.Forms.ComboBox();
             this.label_Seconds = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Minutes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Restart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ShutDown)).BeginInit();
@@ -100,12 +100,11 @@
             // label_Status
             // 
             this.label_Status.AutoSize = true;
-            this.label_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label_Status.Location = new System.Drawing.Point(29, 199);
+            this.label_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label_Status.Location = new System.Drawing.Point(23, 216);
             this.label_Status.Name = "label_Status";
-            this.label_Status.Size = new System.Drawing.Size(21, 20);
+            this.label_Status.Size = new System.Drawing.Size(0, 25);
             this.label_Status.TabIndex = 3;
-            this.label_Status.Text = "...";
             // 
             // label_Timer
             // 
@@ -119,6 +118,7 @@
             // 
             // comboBox_Seconds
             // 
+            this.comboBox_Seconds.Enabled = false;
             this.comboBox_Seconds.FormattingEnabled = true;
             this.comboBox_Seconds.Items.AddRange(new object[] {
             "0",
@@ -196,10 +196,11 @@
             this.label_Seconds.TabIndex = 5;
             this.label_Seconds.Text = "secs";
             // 
-            // comboBox1
+            // comboBox_Minutes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_Minutes.Enabled = false;
+            this.comboBox_Minutes.FormattingEnabled = true;
+            this.comboBox_Minutes.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -260,10 +261,10 @@
             "57",
             "58",
             "59"});
-            this.comboBox1.Location = new System.Drawing.Point(138, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(62, 24);
-            this.comboBox1.TabIndex = 4;
+            this.comboBox_Minutes.Location = new System.Drawing.Point(138, 78);
+            this.comboBox_Minutes.Name = "comboBox_Minutes";
+            this.comboBox_Minutes.Size = new System.Drawing.Size(62, 24);
+            this.comboBox_Minutes.TabIndex = 4;
             // 
             // label1
             // 
@@ -282,7 +283,7 @@
             this.ClientSize = new System.Drawing.Size(458, 289);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Seconds);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_Minutes);
             this.Controls.Add(this.comboBox_Seconds);
             this.Controls.Add(this.label_Status);
             this.Controls.Add(this.button_Start);
@@ -310,7 +311,7 @@
         private System.Windows.Forms.Label label_Timer;
         private System.Windows.Forms.ComboBox comboBox_Seconds;
         private System.Windows.Forms.Label label_Seconds;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Minutes;
         private System.Windows.Forms.Label label1;
     }
 }

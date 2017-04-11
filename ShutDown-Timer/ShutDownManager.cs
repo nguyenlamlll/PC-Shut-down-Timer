@@ -15,23 +15,25 @@ namespace ShutDown_Timer
     {
         private static int timerTime { get; set; }
         private static Label timerStatus { get; set; }
-        public static void ShutDown(int flag, int interval, Timer timer1, Label status)
+        private static FlagEnum CommandFlag { get; set; }
+        public static void ShutDown(FlagEnum flag, int interval, Timer timer1, Label status)
         {
-            if (TickEvents.CommandFlag == 5)
-                try
-                {
-                    timer1.Tick += new EventHandler(TimerOnTick);
 
-                    timerTime = interval;
-                    timerStatus = status;
-                    status.Text = interval.ToString(); //Set the first second before counting down
-                    timer1.Start();
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            try
+            {
+                timer1.Tick += new EventHandler(TimerOnTick);
+
+                CommandFlag = flag;
+                timerTime = interval;
+                timerStatus = status;
+                status.Text = interval.ToString(); //Set the first second before counting down
+                timer1.Start();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private static void TimerOnTick(object obj, EventArgs ea)
@@ -44,7 +46,12 @@ namespace ShutDown_Timer
                 Timer timer = (Timer)obj;
                 timer.Stop();
                 timer.Tick -= new EventHandler(TimerOnTick);
-                MessageBox.Show("Done!");
+                MessageBox.Show("See You Later!");
+
+                if (CommandFlag == FlagEnum.ForceShutDown) TickEventsManager.ShutDownWithCommand();
+
+                if (CommandFlag == FlagEnum.ForceReboot) TickEventsManager.RebootWithCommand();
+
             }
 
         }
